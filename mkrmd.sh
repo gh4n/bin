@@ -11,7 +11,8 @@ else
 	if [ -f "$FILE" ]; then
 		echo "Error, file already exists"
 	else
-		preamble="---\ntitle: $2\nauthor: Grace Han\noutput: $3\n---"
+		preamble="---$'\n'title: "$2"$'\n'author: Grace Han$'\n'output: "$3"$'\n'---"
+		echo $preamble
 		$preamble > $FILE 
 	fi;
 fi
